@@ -1,3 +1,8 @@
+/**
+ *  Паттерн Фабричный метод создает объекты не напрямую,
+ *  используя оператор new, а через вызов особого фабричного метода.
+ */
+
 class SimpleMembership {
   constructor(name) {
     this.name = name
@@ -29,7 +34,9 @@ class MemberFactory {
   create(name, type = 'simple') {
     const Membership = MemberFactory.list[type] || MemberFactory.list.simple
     const member = new Membership(name)
+    // Устанавливаем тип
     member.type = type
+    // Добавили новый функционал к объекту
     member.define = function() {
       console.log(`${this.name} (${this.type}): ${this.cost}`)
     }

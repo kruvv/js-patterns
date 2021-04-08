@@ -1,3 +1,9 @@
+/**
+ *  Конструктор - паттерн для создания объекта с помощью ключевого слова new
+ *  и передачи в него необходимых параметров
+ */
+
+// Старая реализация (до появления классов)
 // function Server(name, ip) {
 //   this.name = name
 //   this.ip = ip
@@ -19,4 +25,4 @@ class Server {
 }
 
 const aws = new Server('AWS German', '82.21.21.32')
-console.log(aws.getUrl())
+console.log(`${aws.name} имеет адрес: `, aws.getUrl())
